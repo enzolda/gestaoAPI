@@ -29,10 +29,10 @@ class ProductService
             ->paginate($filters['per_page'] ?? 10);
     }
 
-    public function getProductById(int $id): ?Product
+    public function getProductById(int $id)
     {
-        // return Product::find($id);
-        return Product::where('id', $id)->first();
+        return json_encode(Product::find($id));
+        //return Product::where('id', $id)->first();
     }
 
     public function updateProduct(int $id, array $data): ?Product
