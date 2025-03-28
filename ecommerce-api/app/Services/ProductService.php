@@ -31,7 +31,7 @@ class ProductService
 
     public function getProductById(int $id)
     {
-        return json_encode(Product::find($id));
+        return Product::find($id);
         //return Product::where('id', $id)->first();
     }
 
